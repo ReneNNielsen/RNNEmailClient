@@ -1,0 +1,19 @@
+﻿<Window x:Class="RNNEmailClient.addNewUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tilføj ny bruger" Height="230" Width="240">
+    <Grid>
+        <Label Content="Email addresse" HorizontalAlignment="Left" Margin="16,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.095,-0.045" Width="92" Height="27"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="16,47,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.095,-0.045" Width="92" Height="27"/>
+        <Label Content="PoP3" HorizontalAlignment="Left" Margin="16,79,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.095,-0.045" Width="92" Height="27"/>
+        <Label Content="Port" HorizontalAlignment="Left" Margin="16,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.095,-0.045" Width="92" Height="27"/>
+        <Label Content="Ssl" HorizontalAlignment="Left" Margin="16,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.095,-0.045" Width="92" Height="27"/>
+        <TextBox Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="113,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <PasswordBox Name="txtPass" HorizontalAlignment="Left" Margin="113,51,0,0" VerticalAlignment="Top" Width="100" Height="23"/>
+        <TextBox Name="txtPoP" HorizontalAlignment="Left" Height="23" Margin="113,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBox Name="txtPort" HorizontalAlignment="Left" Height="23" Margin="113,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <CheckBox Name="chbSsl" HorizontalAlignment="Left" Margin="113,138,0,0" VerticalAlignment="Top" Height="16" Width="68"/>
+        <Button Name="btnCon" Content="Connect" HorizontalAlignment="Left" Margin="16,165,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnCon_Click"/>
+        <Button Name="btnCan" Content="Annuller" HorizontalAlignment="Left" Margin="135,165,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnCan_Click"/>
+    </Grid>
+</Window>
