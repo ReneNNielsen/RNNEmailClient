@@ -78,7 +78,7 @@ namespace RNNEmailClient
         }
         public List<emailStruct> FetchAllMessages()
         {
-            //HEJ
+            //HEJ MED DIG
             if(!SetConnection())
             {
                 return null;
