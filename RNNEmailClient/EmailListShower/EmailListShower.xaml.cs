@@ -17,9 +17,16 @@ namespace RNNEmailClient
 {
     /// <summary>
     /// Interaction logic for EmailListShower.xaml
+    /// Shows all the emails for the folder
     /// </summary>
     public partial class EmailListShower : UserControl
     {
+        /// <summary>
+        /// Shows all the emails for the folder
+        /// </summary>
+        /// <param name="emailList">the email to bee shown</param>
+        /// <param name="_headerText">the header text of this usercontrol</param>
+        /// <param name="mw">the main window</param>
         public EmailListShower(List<PopClient.emailStruct> emailList, string _headerText, MainWindow mw)
         {
             InitializeComponent();

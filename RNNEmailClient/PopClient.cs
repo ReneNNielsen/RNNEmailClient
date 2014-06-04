@@ -8,6 +8,9 @@ using OpenPop.Mime;
 
 namespace RNNEmailClient
 {
+    /// <summary>
+    /// the pop 3 client
+    /// </summary>
     public class PopClient
     {
         public struct emailStruct
@@ -27,10 +30,18 @@ namespace RNNEmailClient
         public List<string> seenUids;
         private User.user user;
         private Pop3Client client;
+        /// <summary>
+        /// the pop 3 client
+        /// </summary>
+        /// <param name="_user">the user for this pop 3 client</param>
         public PopClient(User.user _user)
         {
             user = _user;
         }
+        /// <summary>
+        /// connect to the email server by the user
+        /// </summary>
+        /// <returns></returns>
         public bool SetConnection()
         {
             client = new Pop3Client();
@@ -52,6 +63,10 @@ namespace RNNEmailClient
             }
             return false;
         }
+        /// <summary>
+        /// Test connection
+        /// </summary>
+        /// <returns>error message</returns>
         public string checkConnection()
         {
             
@@ -76,6 +91,10 @@ namespace RNNEmailClient
             client.Disconnect();
             return returnString;
         }
+        /// <summary>
+        /// Gets all message from the email server
+        /// </summary>
+        /// <returns>all message from the server as List emailStruct</returns>
         public List<emailStruct> FetchAllMessages()
         {
             //HEJ MED DIG
@@ -125,10 +144,22 @@ namespace RNNEmailClient
             return allEmails;
 
         }
+        /// <summary>
+        /// Get all unseen emails from the server
+        /// </summary>
+        /// <returns>list of new emails</returns>
         public List<emailStruct> FetchUnseenMessages()
         {
             SetConnection();
-            List<string> uids = client.GetMessageUids();
+            List<string> uids;
+            try
+            {   
+                uids = client.GetMessageUids();
+            }
+            catch
+            {
+                return null;
+            }
             List<emailStruct> allEmails = new List<emailStruct>();
 
             for (int i = 0; i < uids.Count; i++)
@@ -166,6 +197,23 @@ namespace RNNEmailClient
                     email.body = mes.FindFirstHtmlVersion().GetBodyAsText();
                     email.receiver = user.email;
                     email.seen = false;
+                    if (String.IsNullOrEmpty(email.messageID))
+                    {
+                        MailDatabase db = new MailDatabase();
+                        bool inDatabase = false;
+                        foreach (emailStruct spamEmail in db.getEmailByMessageID("NULL"))
+                        {
+                            if (spamEmail.body == email.body && spamEmail.senderEmail == email.senderEmail && spamEmail.subject == email.subject)
+                            {
+                                inDatabase = true;
+                                break;
+                            }
+                        }
+                        if(inDatabase)
+                        {
+                            continue;
+                        }
+                    }
                     allEmails.Add(email);
                     seenUids.Add(currentUidOnServer);
                 }

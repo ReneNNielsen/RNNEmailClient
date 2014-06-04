@@ -17,18 +17,25 @@ namespace RNNEmailClient
 {
     /// <summary>
     /// Interaction logic for EmailShower.xaml
+    /// Show the selected email
     /// </summary>
     public partial class EmailShower : UserControl
     {
-        
-
         PopClient.emailStruct email;
+        /// <summary>
+        /// Show the selected email
+        /// </summary>
+        /// <param name="_email">the email to be shown</param>
         public EmailShower(PopClient.emailStruct _email)
         {
             InitializeComponent();
             email = _email;
         }
-
+        /// <summary>
+        /// adds the email to the objects then the userControl have been loaded
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">event</param>
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             lblDate.Content = email.timeStamp;

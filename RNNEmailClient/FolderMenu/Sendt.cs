@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace RNNEmailClient
 {
+    /// <summary>
+    /// Contains a sendt folder
+    /// </summary>
     class Sendt : Folders
     {
         public Sendt(FolderMenu _folderMenu, MainWindow _mw)

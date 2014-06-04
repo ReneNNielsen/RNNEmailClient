@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace RNNEmailClient
 {
+    /// <summary>
+    /// the struct of an user
+    /// </summary>
     public static class User
     {
         /// <summary>

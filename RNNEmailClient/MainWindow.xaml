@@ -15,6 +15,7 @@
         <StackPanel Grid.Row="0" Background="Cyan" Grid.ColumnSpan="2" Name="menuBar" Orientation="Horizontal">
             <Button Width="100" Name="newUser" Content="Ny bruger" Background="Transparent" BorderThickness="1" BorderBrush="Black" Click="newUser_Click" />
             <Button Width="100" Name="NewEmail" Content="Ny email" Background="Transparent" BorderThickness="1" BorderBrush="Black" Click="newEmail_Click" />
+            <Button Width="100" Name="TestEncryption" Content="Test encryption" Background="Transparent" BorderThickness="1" BorderBrush="Black" Click="TestEncryption_Click" />
         </StackPanel>
         <Grid Grid.Row="1" Grid.Column="0" Name="leftContent">
             <Grid.ColumnDefinitions>

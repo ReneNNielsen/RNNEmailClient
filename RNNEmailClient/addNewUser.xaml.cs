@@ -16,6 +16,7 @@ namespace RNNEmailClient
 {
     /// <summary>
     /// Interaction logic for addNewUser.xaml
+    /// used to add a new user to the application
     /// </summary>
     public partial class addNewUser : Window
     {
@@ -23,7 +24,11 @@ namespace RNNEmailClient
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Adds the user to the settings
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">event</param>
         private void btnCon_Click(object sender, RoutedEventArgs e)
         {
             int port;
@@ -65,7 +70,11 @@ namespace RNNEmailClient
                 MessageBox.Show("Email er tom");
             }
         }
-
+        /// <summary>
+        /// close the window nothing will be saved
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">event</param>
         private void btnCan_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;

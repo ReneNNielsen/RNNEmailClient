@@ -1,0 +1,19 @@
+﻿<Window x:Class="RNNEmailClient.Encryption"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Encryption" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBox Name="txtText" Grid.Column="0" Grid.Row="0" />
+        <TextBlock Name="BlockText" Grid.Column="0" Grid.Row="1" />
+        <Button Name="btnEncryption" Content="Encryption" Grid.Column="1" Grid.Row="0" Click="btnEncryption_Click" />
+        <Button Name="btnDecryption" Content="Decryption" Grid.Column="1" Grid.Row="1" Click="btnDecryption_Click" />
+    </Grid>
+</Window>

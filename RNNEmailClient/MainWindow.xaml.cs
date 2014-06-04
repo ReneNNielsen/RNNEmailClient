@@ -20,6 +20,7 @@ namespace RNNEmailClient
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// The appliaction main fill
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -27,8 +28,12 @@ namespace RNNEmailClient
         public MainWindow()
         {
             InitializeComponent();
-            
         }
+        /// <summary>
+        /// Click to add new user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void newUser_Click(object sender, RoutedEventArgs e)
         {
             addNewUser newUser = new addNewUser();
@@ -40,7 +45,11 @@ namespace RNNEmailClient
                 mdhList.Add(mdh);
             }
         }
-
+        /// <summary>
+        /// adds all folderMenus to the applaiction
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">event</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             User.GetUsersFromSettings();
@@ -52,11 +61,24 @@ namespace RNNEmailClient
                 mdhList.Add(mdh);
             }
         }
-
+        /// <summary>
+        /// Send new email
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void newEmail_Click(object sender, RoutedEventArgs e)
         {
             NewEmail newEmail = new NewEmail();
             if (newEmail.ShowDialog() == true)
+            {
+
+            }
+        }
+
+        private void TestEncryption_Click(object sender, RoutedEventArgs e)
+        {
+            Encryption testEncryption = new Encryption();
+            if (testEncryption.ShowDialog() == true)
             {
 
             }

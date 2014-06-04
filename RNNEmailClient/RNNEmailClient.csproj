@@ -84,6 +84,9 @@
     <Compile Include="EmailShower.xaml.cs">
       <DependentUpon>EmailShower.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Encryption.xaml.cs">
+      <DependentUpon>Encryption.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FolderMenu\Folder.cs" />
     <Compile Include="FolderMenu\FolderMenu.xaml.cs">
       <DependentUpon>FolderMenu.xaml</DependentUpon>
@@ -116,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EmailShower.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Encryption.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
